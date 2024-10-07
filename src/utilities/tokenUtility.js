@@ -7,7 +7,7 @@ export const encodeToken = (email,user_id)=>{
     return jwt.sign(PAYLOAD,KEY,EXPIRE)
 }
 
-export const decodeToken = async(token)=>{
+export const decodeToken =(token)=>{
     try {
         const KEY = 'abc123';
         return jwt.verify(token,KEY)
