@@ -10,5 +10,5 @@ const registrationSchema = new mongoose.Schema({
     versionKey:false
 });
 
-const registrationModel = mongoose.model('students',registrationSchema)
-export default registrationModel
+const studentModel = mongoose.model('students',registrationSchema)
+export default studentModel

@@ -1,11 +1,12 @@
 import express from "express";
-import { studentRegistration } from "../controllers/userController.js";
+import { studentLogin, studentRegistration } from "../controllers/userController.js";
 
 const router =express.Router();
 
 
-//create student
+//student api
 router.post('/studentRegistration',studentRegistration)
+router.post('/studentLogin',studentLogin)
 
 
 export default router
