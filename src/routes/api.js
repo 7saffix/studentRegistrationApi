@@ -1,7 +1,7 @@
 import express from "express";
 import { readProfile, studentLogin, studentRegistration, updateProfile } from "../controllers/userController.js";
 import { authVerify } from "../middlewares/authMiddleware.js";
-import { readFile, uploadFile } from "../controllers/fileController.js";
+import { deleteFile, readFile, uploadFile } from "../controllers/fileController.js";
 
 const router =express.Router();
 
@@ -15,5 +15,5 @@ router.post('/updateProfile',authVerify,updateProfile);
 //file api
 router.post('/upload',uploadFile);
 router.get('/read/:filename', readFile); 
-
+router.delete('/delete/:filename', deleteFile);
 export default router

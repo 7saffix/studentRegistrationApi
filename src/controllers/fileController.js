@@ -37,3 +37,15 @@ export const readFile = async (req, res) => {
       res.status(500).json({ message: 'Failed to read file', error: error.message });
     }
   };
+
+// Delete file
+export const deleteFile = async (req, res) => {
+    try {
+      const filePath = path.join(__dirname, '../../uploads', req.params.filename);
+      await fs.unlink(filePath); 
+      res.status(200).json({ message: 'File deleted successfully' });
+    } catch (error) {
+      res.status(500).json({ message: 'Failed to delete file', error: error.message });
+    }
+  };
+    
